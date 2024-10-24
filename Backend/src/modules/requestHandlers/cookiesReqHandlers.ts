@@ -26,7 +26,8 @@ async function setCookie(req: Request, res: Response, next: NextFunction): Promi
             path: '/',
             httpOnly: false,
             maxAge: 1000*60*60*24*7,
-            sameSite: 'none'
+            sameSite: 'none',
+            secure: true
         };
 
         res.cookie('user', `id:${foundUser.id}--username:${foundUser.username}--userimage:${foundUser.userImage}`, settings)
